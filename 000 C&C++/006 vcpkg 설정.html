@@ -9,17 +9,21 @@
       
       
       
+        <link rel="prev" href="005%20MT%EC%99%80%20MD%20%EB%B9%84%EA%B5%90.html">
       
-      <link rel="icon" href="/assets/images/favicon.png">
+      
+        <link rel="next" href="007%20CMakeLists%20%EC%A4%91%EA%B0%84%20%EC%A0%95%EB%A6%AC.html">
+      
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.11">
     
     
       
-        <title>Engineer_for_Programing</title>
+        <title>vcpkg 설정 및 사용 사유 - Engineer_for_Programing</title>
       
     
     
-      <link rel="stylesheet" href="/assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.85bb2934.min.css">
       
       
 
@@ -35,7 +39,7 @@
       
     
     
-    <script>__md_scope=new URL("/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -56,6 +60,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#vcpkg" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -68,7 +77,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/index.html" title="Engineer_for_Programing" class="md-header__button md-logo" aria-label="Engineer_for_Programing" data-md-component="logo">
+    <a href="../index.html" title="Engineer_for_Programing" class="md-header__button md-logo" aria-label="Engineer_for_Programing" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -87,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              vcpkg 설정 및 사용 사유
             
           </span>
         </div>
@@ -154,7 +163,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/index.html" title="Engineer_for_Programing" class="md-nav__button md-logo" aria-label="Engineer_for_Programing" data-md-component="logo">
+    <a href="../index.html" title="Engineer_for_Programing" class="md-nav__button md-logo" aria-label="Engineer_for_Programing" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -173,7 +182,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/index.html" class="md-nav__link">
+      <a href="../index.html" class="md-nav__link">
         Programming For Engineers
       </a>
     </li>
@@ -186,14 +195,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
       
       
       
@@ -202,7 +213,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           000 C&C++
@@ -215,7 +226,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/000%20C%26C%2B%2B/000%20%EA%B0%9C%EB%B0%9C%20%ED%99%98%EA%B2%BD.html" class="md-nav__link">
+      <a href="000%20%EA%B0%9C%EB%B0%9C%20%ED%99%98%EA%B2%BD.html" class="md-nav__link">
         개발 환경
       </a>
     </li>
@@ -229,7 +240,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/000%20C%26C%2B%2B/001%20OpenGL%20%EC%84%A4%EC%A0%95.html" class="md-nav__link">
+      <a href="001%20OpenGL%20%EC%84%A4%EC%A0%95.html" class="md-nav__link">
         OpenGL
       </a>
     </li>
@@ -243,7 +254,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/000%20C%26C%2B%2B/002%20Dear%20IMGUI.html" class="md-nav__link">
+      <a href="002%20Dear%20IMGUI.html" class="md-nav__link">
         Dear ImGui
       </a>
     </li>
@@ -257,7 +268,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/000%20C%26C%2B%2B/003%20%ED%95%9C%EA%B8%80%20%EC%A0%81%EC%9A%A9.html" class="md-nav__link">
+      <a href="003%20%ED%95%9C%EA%B8%80%20%EC%A0%81%EC%9A%A9.html" class="md-nav__link">
         한글 적용
       </a>
     </li>
@@ -271,7 +282,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/000%20C%26C%2B%2B/004%20IMGUI%20Image%20Viewer.html" class="md-nav__link">
+      <a href="004%20IMGUI%20Image%20Viewer.html" class="md-nav__link">
         IMGUI Image Viewer
       </a>
     </li>
@@ -285,7 +296,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/000%20C%26C%2B%2B/005%20MT%EC%99%80%20MD%20%EB%B9%84%EA%B5%90.html" class="md-nav__link">
+      <a href="005%20MT%EC%99%80%20MD%20%EB%B9%84%EA%B5%90.html" class="md-nav__link">
         MT와 MD 비교
       </a>
     </li>
@@ -297,11 +308,80 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="/000%20C%26C%2B%2B/006%20vcpkg%20%EC%84%A4%EC%A0%95.html" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          vcpkg 설정 및 사용 사유
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="006%20vcpkg%20%EC%84%A4%EC%A0%95.html" class="md-nav__link md-nav__link--active">
         vcpkg 설정 및 사용 사유
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-vcpkg" class="md-nav__link">
+    1. vcpkg 다운로드
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-build" class="md-nav__link">
+    2. Build
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-x64-windows-vs-x64-windows-static" class="md-nav__link">
+    3. x64-windows vs x64-windows-static
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-find_package" class="md-nav__link">
+    4. find_package
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-vcpkg-msvc" class="md-nav__link">
+    5. vcpkg + MSVC 연동
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -313,7 +393,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/000%20C%26C%2B%2B/007%20CMakeLists%20%EC%A4%91%EA%B0%84%20%EC%A0%95%EB%A6%AC.html" class="md-nav__link">
+      <a href="007%20CMakeLists%20%EC%A4%91%EA%B0%84%20%EC%A0%95%EB%A6%AC.html" class="md-nav__link">
         CMakeLists 중간 정리
       </a>
     </li>
@@ -327,7 +407,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/000%20C%26C%2B%2B/008%20vcpkg%EB%A5%BC%20%ED%99%9C%EC%9A%A9%ED%95%9C%20%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC%20%EC%84%A4%EC%B9%98.html" class="md-nav__link">
+      <a href="008%20vcpkg%EB%A5%BC%20%ED%99%9C%EC%9A%A9%ED%95%9C%20%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC%20%EC%84%A4%EC%B9%98.html" class="md-nav__link">
         GoogleTest, Abseil, Protobuf 설치
       </a>
     </li>
@@ -341,7 +421,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/000%20C%26C%2B%2B/009%20Protobuf%EC%99%80%20gRPC%20%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0%20%EC%A0%84%EC%97%90%20%EC%9D%BD%EC%96%B4%EB%B4%90%EC%95%BC%ED%95%A0%20%EB%AC%B8%EC%84%9C.html" class="md-nav__link">
+      <a href="009%20Protobuf%EC%99%80%20gRPC%20%EC%82%AC%EC%9A%A9%ED%95%98%EA%B8%B0%20%EC%A0%84%EC%97%90%20%EC%9D%BD%EC%96%B4%EB%B4%90%EC%95%BC%ED%95%A0%20%EB%AC%B8%EC%84%9C.html" class="md-nav__link">
         Protobuf와 gRPC 사용하기 전에 읽어봐야할 문서
       </a>
     </li>
@@ -355,7 +435,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/000%20C%26C%2B%2B/010%20Cinder%20%EC%84%A4%EC%B9%98%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20ImGui.html" class="md-nav__link">
+      <a href="010%20Cinder%20%EC%84%A4%EC%B9%98%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20ImGui.html" class="md-nav__link">
         Cinder 설치 그리고 ImGui
       </a>
     </li>
@@ -369,7 +449,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/000%20C%26C%2B%2B/011%20Cinder%20%EC%84%A4%EC%B9%98%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20Box2D.html" class="md-nav__link">
+      <a href="011%20Cinder%20%EC%84%A4%EC%B9%98%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20Box2D.html" class="md-nav__link">
         Cinder 설치 그리고 Box2D
       </a>
     </li>
@@ -383,7 +463,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/000%20C%26C%2B%2B/012%20Cinder%20%EC%84%A4%EC%B9%98%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20Bullet.html" class="md-nav__link">
+      <a href="012%20Cinder%20%EC%84%A4%EC%B9%98%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20Bullet.html" class="md-nav__link">
         Cinder 설치 그리고 Bullet
       </a>
     </li>
@@ -397,7 +477,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/000%20C%26C%2B%2B/100%20Eigen%EA%B3%BC%20%EA%B7%B8%20%EC%99%B8%20%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC%20%EB%B9%84%EA%B5%90.html" class="md-nav__link">
+      <a href="100%20Eigen%EA%B3%BC%20%EA%B7%B8%20%EC%99%B8%20%EB%9D%BC%EC%9D%B4%EB%B8%8C%EB%9F%AC%EB%A6%AC%20%EB%B9%84%EA%B5%90.html" class="md-nav__link">
         Linear Algebra - OpenBLAS, LAPACK, CLAPACK, Eigen
       </a>
     </li>
@@ -411,7 +491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/000%20C%26C%2B%2B/101%20Batch%20%ED%8C%8C%EC%9D%BC%EB%A1%9C%20%ED%99%95%EC%9D%B8%ED%95%98%EB%8A%94%20Performance%20%ED%99%95%EC%9D%B8.html" class="md-nav__link">
+      <a href="101%20Batch%20%ED%8C%8C%EC%9D%BC%EB%A1%9C%20%ED%99%95%EC%9D%B8%ED%95%98%EB%8A%94%20Performance%20%ED%99%95%EC%9D%B8.html" class="md-nav__link">
         Batch 파일로 확인하는 Performance 확인
       </a>
     </li>
@@ -460,7 +540,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/001%20Python/09%20Design%20Pattern%20-%20Mixin.html" class="md-nav__link">
+      <a href="../001%20Python/09%20Design%20Pattern%20-%20Mixin.html" class="md-nav__link">
         Mixin
       </a>
     </li>
@@ -474,7 +554,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/001%20Python/09%20Design%20Pattern%20-%20Reflection.html" class="md-nav__link">
+      <a href="../001%20Python/09%20Design%20Pattern%20-%20Reflection.html" class="md-nav__link">
         Reflection & Introspection
       </a>
     </li>
@@ -488,7 +568,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/001%20Python/09%20Design%20Pattern%20-%20Singleton.html" class="md-nav__link">
+      <a href="../001%20Python/09%20Design%20Pattern%20-%20Singleton.html" class="md-nav__link">
         Singleton
       </a>
     </li>
@@ -502,7 +582,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/001%20Python/10%20How%20to%20-%20Cython%20%EC%A0%81%EC%9A%A9%EB%B0%A9%EB%B2%95.html" class="md-nav__link">
+      <a href="../001%20Python/10%20How%20to%20-%20Cython%20%EC%A0%81%EC%9A%A9%EB%B0%A9%EB%B2%95.html" class="md-nav__link">
         Cython 적용 방법
       </a>
     </li>
@@ -516,7 +596,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/001%20Python/11%20Knowhow%20-%20reactivex.html" class="md-nav__link">
+      <a href="../001%20Python/11%20Knowhow%20-%20reactivex.html" class="md-nav__link">
         ReactiveX
       </a>
     </li>
@@ -530,7 +610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/001%20Python/11%20Knowhow%20-%20sphinx.html" class="md-nav__link">
+      <a href="../001%20Python/11%20Knowhow%20-%20sphinx.html" class="md-nav__link">
         Sphinx
       </a>
     </li>
@@ -579,7 +659,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/009%20%EC%9E%84%EC%8B%9C%ED%8F%B4%EB%8D%94/02%20Python%20for%20C%20language.html" class="md-nav__link">
+      <a href="../009%20%EC%9E%84%EC%8B%9C%ED%8F%B4%EB%8D%94/02%20Python%20for%20C%20language.html" class="md-nav__link">
         Python for C language
       </a>
     </li>
@@ -593,7 +673,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/009%20%EC%9E%84%EC%8B%9C%ED%8F%B4%EB%8D%94/03%20Rust%20for%20C%20language.html" class="md-nav__link">
+      <a href="../009%20%EC%9E%84%EC%8B%9C%ED%8F%B4%EB%8D%94/03%20Rust%20for%20C%20language.html" class="md-nav__link">
         Rust for C language
       </a>
     </li>
@@ -607,7 +687,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/009%20%EC%9E%84%EC%8B%9C%ED%8F%B4%EB%8D%94/reinforce_learning.html" class="md-nav__link">
+      <a href="../009%20%EC%9E%84%EC%8B%9C%ED%8F%B4%EB%8D%94/reinforce_learning.html" class="md-nav__link">
         Policy Gradient Algorithms
       </a>
     </li>
@@ -638,6 +718,51 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-vcpkg" class="md-nav__link">
+    1. vcpkg 다운로드
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-build" class="md-nav__link">
+    2. Build
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-x64-windows-vs-x64-windows-static" class="md-nav__link">
+    3. x64-windows vs x64-windows-static
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-find_package" class="md-nav__link">
+    4. find_package
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-vcpkg-msvc" class="md-nav__link">
+    5. vcpkg + MSVC 연동
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -649,8 +774,62 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+<h1 id="vcpkg">vcpkg 설정 및 사용 사유</h1>
+<p>기본적으로 C/C++을 개발함에 있어서 google에서 사용한다는 라이브러리들을 적용하려다가 결국 실패해서 vcpkg를 만져보게 되었습니다.</p>
+<ol>
+<li>googletest</li>
+<li>abseil</li>
+<li>
+<p>protobuf</p>
+</li>
+<li>
+<p>1번은 쉽게 CMAKE + MVSC 환경에서 쉽게 Build가 가능합니다.</p>
+</li>
+<li>2번은 ...너무 어렵습니다. 잘 안됩니다. 일단 어느 홈페이지도 믿을 수 없습니다.</li>
+<li>3번은 build 되어있는 압축 파일을 다운로드 받는 것이 신상에 이롭습니다. (잘 build 되지 않음. 종속성 맞추기 힘듬)</li>
+</ol>
+<p>그래서 원래 선호하지 않았지만 vcpkg를 사용해보니 위 3개의 라이브러를 쉽게 설치할 수 있는 것으로 보였습니다. 또한 CMAKE 적용해도 용이하니 해당 내용을 정리합니다.</p>
+<h2 id="1-vcpkg">1. vcpkg 다운로드</h2>
+<p>직접 다운로드 받거나 git clone을 활용하여 다운로드 받도록 합니다. git clone을 통하여 다운로드 받는 것이 아니면 향후 git pull 같은 명령어로 업데이트를 할 수가 없습니다.</p>
+<p>Github : https://github.com/Microsoft/vcpkg</p>
+<p>단, 한국어 설명어 페이지가 있습니다. 반드시 참조하도록 합니다.</p>
+<p>한국어 Manual : https://github.com/microsoft/vcpkg/blob/master/README_ko_KR.md</p>
+<h2 id="2-build">2. Build</h2>
+<p>.\vcpkg\bootstrap-vcpkg.bat</p>
+<p>명령어 치시면 설치가 진행됩니다. 다만 편의를 위해 환경 변수를  설치가 된 폴더(vcpkg.exe 파일이 있는 경로) 등록해줍니다.</p>
+<h2 id="3-x64-windows-vs-x64-windows-static">3. x64-windows vs x64-windows-static</h2>
+<ul>
+<li>x64-windows : MD build 지원</li>
+<li>x64-windows-static : MT build 지원</li>
+</ul>
+<p>예를 들어 googletest를 설치하겠다 하면 다음과 같이 입력하면 됩니다.</p>
+<div class="language-shell highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>vcpkg<span class="w"> </span>install<span class="w"> </span>gtest:x64-windows
+</span></code></pre></div>
+<p>뒤에 <code>x64-windows</code>가 없으면 자동으로 설치될 것이므로 편의상 한개로 죽 밀고 나가는 것이 좋습니다. 여기서 저는 MD를 밀기로 하였으므로 MD로 진행하겠습니다.</p>
+<h2 id="4-find_package">4. find_package</h2>
+<p>vcpkg를 사용하면 cmake에 아래와 같은 명령어를 가급적 상단에 기입했을 때 find_package 기능을 사용할 수 있습니다.</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c"># 저는 x64-windows를 기본적으로 사용합니다.</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="nb">set</span><span class="p">(</span><span class="s">VCPKG_TARGET_TRIPLET</span><span class="w"> </span><span class="s">x64-windows</span><span class="p">)</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c"># 제 vcpkg.cmake 경로는 다음과 같습니다.</span>
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="nb">include</span><span class="p">(</span><span class="s">C:/c_library/vcpkg/scripts/buildsystems/vcpkg.cmake</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="5-vcpkg-msvc">5. vcpkg + MSVC 연동</h2>
+<p><code>vcpkg integrate install</code> 명령어를 기입하면 MSVC와 연동된다는데 효용 가치는 아직 잘 모르겠으나 아래와 같은 정보를 출력해줍니다.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Applied user-wide integration for this vcpkg root.
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>CMake projects should use: &quot;-DCMAKE_TOOLCHAIN_FILE=C:/c_library/vcpkg/scripts/buildsystems/vcpkg.cmake&quot;
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a>All MSBuild C++ projects can now #include any installed libraries. Linking will be handled automatically. Installing new libraries will make them instantly available.
+</span></code></pre></div>
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -682,12 +861,12 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "/", "features": [], "search": "/assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="/assets/javascripts/bundle.fac441b0.min.js"></script>
+      <script src="../assets/javascripts/bundle.fac441b0.min.js"></script>
       
-        <script src="/javascripts/mathjax.js"></script>
+        <script src="../javascripts/mathjax.js"></script>
       
         <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
       
