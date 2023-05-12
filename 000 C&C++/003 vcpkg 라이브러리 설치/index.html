@@ -1,0 +1,872 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../002%20vcpkg%20%EC%84%A4%EC%A0%95/">
+      
+      
+        <link rel="next" href="../010%20Cinder%20%EC%84%A4%EC%B9%98%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20ImGui/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.11">
+    
+    
+      
+        <title>vcpkg 라이브러리 설치 - Engineer For Programing</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#vcpkg" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Engineer For Programing" class="md-header__button md-logo" aria-label="Engineer For Programing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Engineer For Programing
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              vcpkg 라이브러리 설치
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Engineer For Programing" class="md-nav__button md-logo" aria-label="Engineer For Programing" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Engineer For Programing
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          C&C++
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          C&C++
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../000%20VSCODE%EB%A1%9C%20C%2B%2B%20%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0/" class="md-nav__link">
+        VSCODE로 C++ 시작하기
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../001%20ImGui%20With%20OpenGL/" class="md-nav__link">
+        ImGui With OpenGL
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../002%20vcpkg%20%EC%84%A4%EC%A0%95/" class="md-nav__link">
+        vcpkg 설정 및 사용 사유
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          vcpkg 라이브러리 설치
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        vcpkg 라이브러리 설치
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-googletest" class="md-nav__link">
+    1. Googletest 설치
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-abseil" class="md-nav__link">
+    2. Abseil 설치
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-protobuf" class="md-nav__link">
+    3. Protobuf 설치
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-grpc" class="md-nav__link">
+    4. gRPC 설치
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-eigen" class="md-nav__link">
+    5. Eigen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-poco" class="md-nav__link">
+    6. POCO
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-glfw" class="md-nav__link">
+    7. glfw
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-stb" class="md-nav__link">
+    8. stb
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-tinyxml2" class="md-nav__link">
+    9. tinyxml2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-bullet3" class="md-nav__link">
+    10. bullet3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-dataframe" class="md-nav__link">
+    11. Dataframe
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-glm" class="md-nav__link">
+    12. glm
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_5" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5" id="__nav_2_5_label" tabindex="0">
+          Cinder 설치 그리고
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          Cinder 설치 그리고
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../010%20Cinder%20%EC%84%A4%EC%B9%98%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20ImGui/" class="md-nav__link">
+        ImGui
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../011%20Cinder%20%EC%84%A4%EC%B9%98%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20Box2D/" class="md-nav__link">
+        Box2D
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../012%20Cinder%20%EC%84%A4%EC%B9%98%20%EA%B7%B8%EB%A6%AC%EA%B3%A0%20Bullet/" class="md-nav__link">
+        Bullet
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../001%20Python/000%20%ED%99%98%EA%B2%BD%20%EB%B3%80%EC%88%98%20%EC%84%A4%EC%A0%95/" class="md-nav__link">
+        환경 변수 설정
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../001%20Python/001%20mkdocs%20%EC%9A%94%EB%A0%B9/" class="md-nav__link">
+        mkdocs 설정
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../001%20Python/002%20%EC%97%85%EB%AC%B4%20%EC%9E%90%EB%8F%99%ED%99%94%28RPA%29/" class="md-nav__link">
+        업무 자동화(RPA)
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          Rust
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Rust
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../002%20Rust/001%20Rust%20With%20Jupyter/" class="md-nav__link">
+        Rust With Jupyter
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-googletest" class="md-nav__link">
+    1. Googletest 설치
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-abseil" class="md-nav__link">
+    2. Abseil 설치
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-protobuf" class="md-nav__link">
+    3. Protobuf 설치
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-grpc" class="md-nav__link">
+    4. gRPC 설치
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-eigen" class="md-nav__link">
+    5. Eigen
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-poco" class="md-nav__link">
+    6. POCO
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-glfw" class="md-nav__link">
+    7. glfw
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-stb" class="md-nav__link">
+    8. stb
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9-tinyxml2" class="md-nav__link">
+    9. tinyxml2
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-bullet3" class="md-nav__link">
+    10. bullet3
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11-dataframe" class="md-nav__link">
+    11. Dataframe
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-glm" class="md-nav__link">
+    12. glm
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="vcpkg">vcpkg 라이브러리 설치</h1>
+<p>위 라이브러리들은 상당히 유명한 라이브러리들로 사용하기로 마음을 먹은 라이브러리 들입니다. 필요하신분은 따라해주시면 되겠습니다.</p>
+<h2 id="1-googletest">1. Googletest 설치</h2>
+<p>몇가지 TDD 라이브러라기 있으나 googletest를 활용하여 개발해보겠습니다. 우리는 vcpkg가 있으니 googletest는 해당 패키지 관리자로 사용하겠습니다.</p>
+<p><code>vcpkg install gtest:x64-windows</code>를 기입하면 다운로드 &amp; Build가 진행됩니다. 정상적으로 완료되면 아래와 같이 사용하라고 가이드가 나옵니다.</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="nb">find_package</span><span class="p">(</span><span class="s">GTest</span><span class="w"> </span><span class="s">CONFIG</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">main</span><span class="w"> </span><span class="s">PRIVATE</span><span class="w"> </span><span class="s">GTest::gtest</span><span class="w"> </span><span class="s">GTest::gtest_main</span><span class="w"> </span><span class="s">GTest::gmock</span><span class="w"> </span><span class="s">GTest::gmock_main</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="2-abseil">2. Abseil 설치</h2>
+<p>Abseil에서 제공하는 status 라이브러리에 관심이 생겨서 진행하려던 중에 결과적으로 StatusOr 는 정상적으로 사용할 수 없다는 것을 확인하였습니다. 그러나 갖가지 라이브러리 총체이긴해서 일단 설치합니다.</p>
+<p><code>vcpkg install abseil[cxx17]:x64-windows</code>를 기입하면 다운로드 &amp; Build가 진행됩니다. 정상적으로 완료되면 아래와 같이 사용하라고 가이드가 나옵니다. abseild이 c++17 이상으로 build 해야한다고 다들 추천하기 때문에 해당 cxx17이 포함된 옵션으로 진행하였습니다.</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="nb">find_package</span><span class="p">(</span><span class="s">absl</span><span class="w"> </span><span class="s">CONFIG</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c"># note: 171 additional targets are not displayed.</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">main</span><span class="w"> </span><span class="s">PRIVATE</span><span class="w"> </span><span class="s">absl::any</span><span class="w"> </span><span class="s">absl::log</span><span class="w"> </span><span class="s">absl::base</span><span class="w"> </span><span class="s">absl::bits</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="3-protobuf">3. Protobuf 설치</h2>
+<p>구글 라이브러리를 사용하겠다고 결정해놓고 사용 안하면 아쉬운 protobuf를 설치합니다.</p>
+<p><code>vcpkg install protobuf[zlib]:x64-windows</code>를 기입하면 다운로드 &amp; Build가 진행됩니다. 정상적으로 완료되면 아래와 같이 사용하라고 가이드가 나옵니다. zlib를 설치안하면 몇개의 함수가 동작안하기 때문에, 설치하도록 합니다.</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="nb">find_package</span><span class="p">(</span><span class="s">protobuf</span><span class="w"> </span><span class="s">CONFIG</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">main</span><span class="w"> </span><span class="s">PRIVATE</span><span class="w"> </span><span class="s">protobuf::libprotoc</span><span class="w"> </span><span class="s">protobuf::libprotobuf</span><span class="w"> </span><span class="s">protobuf::libprotobuf-lite</span><span class="p">)</span>
+</span></code></pre></div>
+<p>protobuf를 사용하기 위해선 proto 파일을 변활할 실행 파일이 필요합니다. 이는 vcpkg 설치된 폴더에 있습니다. 저의 경우엔 아래와 같습니다.</p>
+<p><code>C:\c_library\vcpkg\installed\x64-windows\tools\protobuf</code></p>
+<p>경로에 <code>protoc.exe</code> 파일이 있습니다. 그러므로 위의 경로를 환경변수로 등록하는 것이 편합니다.</p>
+<h2 id="4-grpc">4. gRPC 설치</h2>
+<p>protobuf와 마찬가지로 사용 안하면 아쉬운 gRPC를 설치합니다.</p>
+<p><code>vcpkg install grpc:x64-windows</code>를 기입하면 다운로드 &amp; Build가 진행됩니다. 정상적으로 완료되면 아래와 같이 사용하라고 가이드가 나옵니다. 조금 많은 라이브러리들이 설치되는데 기다려줍니다.</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="nb">find_package</span><span class="p">(</span><span class="s">gRPC</span><span class="w"> </span><span class="s">CONFIG</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="c"># note: 7 additional targets are not displayed.</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">main</span><span class="w"> </span><span class="s">PRIVATE</span><span class="w"> </span><span class="s">gRPC::gpr</span><span class="w"> </span><span class="s">gRPC::grpc</span><span class="w"> </span><span class="s">gRPC::grpc++</span><span class="w"> </span><span class="s">gRPC::grpc++_alts</span><span class="p">)</span>
+</span></code></pre></div>
+<p>gRPC를 사용할 때 protobuf를 반드시 사용해야하는데, protobuf로 gRPC 문서를 만들기 위해선 --grpc_out 명령어를 추가로 해야합니다. 그리고 plugin을 추가해야하는데 이는 gRPC 설치된 폴더에서 찾을 수 있습니다. 저의 경우엔 아래와 같습니다.</p>
+<p><code>C:\c_library\vcpkg\installed\x64-windows\tools\grpc</code></p>
+<p>즉, test.proto가 있다고 했을 때 명령창에 아래와 같이 작성해볼 수 있습니다.</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>protoc test.proto --grpc_out=. --plugin=protoc-gen-grpc=C:/c_library/vcpkg/installed/x64-windows/tools/grpc/grpc_cpp_plugin.exe
+</span></code></pre></div>
+<h2 id="5-eigen">5. Eigen</h2>
+<p>수학 계산을 위해 설치하는 라이브러리입니다. 수 많은 라이브러리 중에 왜 사용 했는지는 후반부에 작성해놓은 비교 문서를 확인해보시면 됩니다. 다만, 비교문서에는 직접 설치하는 방법이 설명되어있습니다.</p>
+<p><code>vcpkg install eigen3:x64-windows</code>를 기입하면 다운로드 &amp; Build가 진행됩니다. eigen 라이브러리는 사실 build가 되지 않아서 include만 하면 되는 함수이긴 하지만 vcpkg로 설치하는 것이 편하므로 이 방법을 권장합니다.</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="nb">find_package</span><span class="p">(</span><span class="s">Eigen3</span><span class="w"> </span><span class="s">CONFIG</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">main</span><span class="w"> </span><span class="s">PRIVATE</span><span class="w"> </span><span class="s">Eigen3::Eigen</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="6-poco">6. POCO</h2>
+<p>다양한 기능을 제공하는 라이브러리로써 http request를 위해 설치를 하였습니다. 다양한 사용 방법이 있는 것 같은데 잘 정리해두겠습니다. Poco 라이브러리는 github에 예제 파일을 제공하니 반드시 사용할 때 참고하시기 바랍니다.</p>
+<p><code>vcpkg install poco:x64-windows</code>를 기입하면 다운로드 &amp; Build가 진행됩니다. 아래 작성되는 cmake 코드는 저렇게 바로 사용하면 안됩니다.</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="nb">find_package</span><span class="p">(</span><span class="s">Poco</span><span class="w"> </span><span class="s">REQUIRED</span><span class="w"> </span><span class="s">[COMPONENTS</span><span class="w"> </span><span class="s">&lt;libs&gt;...]</span><span class="p">)</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">main</span><span class="w"> </span><span class="s">PRIVATE</span><span class="w"> </span><span class="s">Poco::&lt;libs&gt;</span><span class="p">)</span>
+</span></code></pre></div>
+<p>만약 내가 POCO 라이브러리의 Net을 사용하겠다고하면 다음과 같이 작성할 수 있습니다.</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="nb">find_package</span><span class="p">(</span><span class="s">Poco</span><span class="w"> </span><span class="s">REQUIRED</span><span class="w"> </span><span class="s">COMPONENTS</span><span class="w"> </span><span class="s">Net</span><span class="p">)</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">main</span><span class="w"> </span><span class="s">PRIVATE</span><span class="w"> </span><span class="s">Poco::Net</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="7-glfw">7. glfw</h2>
+<p>초반에 설명에는 glfw를 직접 다운로드 받아서 진행하는 방식을 취했습니다. 하지만 glfw도 vcpkg로 다운로드 받을 수 있어서 기록해둡니다.</p>
+<p><code>vcpkg install glfw3:x64-windows</code>를 기입하면 다운로드 &amp; Build가 진행됩니다. glad를 설치해야하는 것은 어쩔수 없으므로 glad는 따로 다운로드 받도록 합니다.</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="c"># this is heuristically generated, and may not be correct</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="nb">find_package</span><span class="p">(</span><span class="s">glfw3</span><span class="w"> </span><span class="s">CONFIG</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">main</span><span class="w"> </span><span class="s">PRIVATE</span><span class="w"> </span><span class="s">glfw</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="8-stb">8. stb</h2>
+<p>이 라이브러리 또한 IMGUI 설명할 때 이미지를 읽어들이기 위한 라이브러리였습니다. 이 또한 vcpkg에서 지원하여 기록해둡니다.</p>
+<p><code>vcpkg install stb:x64-windows</code>를 기입하면 다운로드 &amp; Build가 진행됩니다. 이 라이브러리는 헤더만 있는 라이브러리로써 기존에는 link를 했어야하는데 이 라이브러리는 include를 하면 됩니다.</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="nb">find_package</span><span class="p">(</span><span class="s">Stb</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="nb">target_include_directories</span><span class="p">(</span><span class="s">main</span><span class="w"> </span><span class="s">PRIVATE</span><span class="w"> </span><span class="o">${</span><span class="nv">Stb_INCLUDE_DIR</span><span class="o">}</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="9-tinyxml2">9. tinyxml2</h2>
+<p>Poco에서 XML과 SAX를 둘 다 지원해서 써보려고 하였지만, 너무 가독성이 떨어지고 어렵습니다. 그냥 tinyxml2을 사용하는 것이 속편합니다.</p>
+<p><code>vcpkg install tinyxml2:x64-windows</code>를 기입하면 다운로드 &amp; Build가 진행됩니다.</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="c"># this is heuristically generated, and may not be correct</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nb">find_package</span><span class="p">(</span><span class="s">tinyxml2</span><span class="w"> </span><span class="s">CONFIG</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">main</span><span class="w"> </span><span class="s">PRIVATE</span><span class="w"> </span><span class="s">tinyxml2::tinyxml2</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="10-bullet3">10. bullet3</h2>
+<p>3D 물리 엔진이며, 결국 저의 목표가 3D 물리 시뮬레이션이기 때문에 설치방법을 작성합니다. NVIDIA에서 만든 Physx 라이브러리가 있지만, 대체적으로 게임을 위한 라이브러리라고 좀 더 연산이 간소화되어있다고 하여 사용하지 않기로 결정하였습니다. 또한 github star에 의존하는 저로써는 github star가 더 많은 것을 해야겠다고 생각하게 되었습니다.</p>
+<p><code>vcpkg install bullet3:x64-windows</code>를 기입하면 다운로드 &amp; Build가 진행됩니다. 코멘트로 static만 설치된다고 하던데, 사용하는데 별 지장은 없습니다.</p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="nb">find_package</span><span class="p">(</span><span class="s">Bullet</span><span class="w"> </span><span class="s">CONFIG</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">main</span><span class="w"> </span><span class="s">PRIVATE</span><span class="w"> </span><span class="o">${</span><span class="nv">BULLET_LIBRARIES</span><span class="o">}</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="11-dataframe">11. Dataframe</h2>
+<p>파이썬의 pandas와 비슷한 라이브러리이지만 상당히 제약적인 기능을 갖추고 있습니다. 다만 그와 유사한 어느 라이브러리도 존재하지 않기 때문에 이 라이브러리가 그나마 꿀같은 라이브러리입니다.</p>
+<p><code>vcpkg install dataframe:x64-windows</code>를 기입하면 다운로드 &amp; Build가 진행됩니다. </p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="c"># this is heuristically generated, and may not be correct</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="nb">find_package</span><span class="p">(</span><span class="s">DataFrame</span><span class="w"> </span><span class="s">CONFIG</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">main</span><span class="w"> </span><span class="s">PRIVATE</span><span class="w"> </span><span class="s">DataFrame::DataFrame</span><span class="p">)</span>
+</span></code></pre></div>
+<h2 id="12-glm">12. glm</h2>
+<p>OpenGL을 사용하게 되면 필연적으로 연산에 필요한 라이브러리입니다.</p>
+<p><code>vcpkg install glm:x64-windows</code>를 기입하면 다운로드 &amp; Build가 진행됩니다. </p>
+<div class="language-cmake highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="c"># this is heuristically generated, and may not be correct</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="nb">find_package</span><span class="p">(</span><span class="s">glm</span><span class="w"> </span><span class="s">CONFIG</span><span class="w"> </span><span class="s">REQUIRED</span><span class="p">)</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="nb">target_link_libraries</span><span class="p">(</span><span class="s">main</span><span class="w"> </span><span class="s">PRIVATE</span><span class="w"> </span><span class="s">glm::glm</span><span class="p">)</span>
+</span></code></pre></div>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.fac441b0.min.js"></script>
+      
+        <script src="../../javascripts/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
