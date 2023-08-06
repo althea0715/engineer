@@ -1,0 +1,43 @@
+site_name: Engineer For Programing
+
+theme : material
+use_directory_urls: true
+
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+
+plugin:
+  - search
+  - mkdocstring
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+nav:
+  - Home: index.md
+  - C&C++: 
+    - 000 C&C++/000 VSCODE로 C++ 시작하기.md
+    - 000 C&C++/001 ImGui With OpenGL.md
+    - 000 C&C++/002 vcpkg 설정.md
+    - 000 C&C++/003 vcpkg 라이브러리 설치.md
+    - Cinder 설치 그리고:
+      - ImGui: 000 C&C++/010 Cinder 설치 그리고 ImGui.md
+      - Box2D: 000 C&C++/011 Cinder 설치 그리고 Box2D.md
+      - Bullet: 000 C&C++/012 Cinder 설치 그리고 Bullet.md
+  - Python:
+    - 001 Python/000 환경 변수 설정.md
+    - 001 Python/001 mkdocs 요령.md
+    - 001 Python/002 업무 자동화(RPA).md
+  - Rust: 
+    - 002 Rust/001 Rust With Jupyter.md
+
